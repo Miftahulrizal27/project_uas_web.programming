@@ -8,6 +8,11 @@ class Profile extends Main_controller
   }
   public function index()
   {
-    $this->load_views('profile');
+    if(isset($_SESSION['users'])){
+      $this->load_views('profile');
+    }else{
+      header("Location: " . $this->base_url('halaman'));
+      exit;
+    }
   }
 }
