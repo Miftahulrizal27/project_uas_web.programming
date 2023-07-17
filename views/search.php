@@ -6,35 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marketplace - Search</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="<?= $this->base_url('assets/css/'); ?>search.css">
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Marketplace Baduy</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="<?= $this->base_url(); ?>">Marketplace Baduy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="halaman.php">Beranda</a>
+              <a class="nav-link" href="<?= $this->base_url('halaman'); ?>">Beranda</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="">Detail Barang</a>
+              <a class="nav-link" href="<?= $this->base_url('cart'); ?>">Keranjang</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.php">Keranjang</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="insert.php">Tambah Barang</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Profile1.php">Profile</a>
-            </li>
+            <?php if (!empty($_SESSION['users'])) : ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= $this->base_url('insert'); ?>">Tambah Barang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= $this->base_url('profile'); ?>">Profile</a>
+              </li>
+            <?php endif ?>
           </ul>
         </div>
       </div>
@@ -208,9 +207,10 @@
         <div class="product-item">
           <img src="https://cdn.idntimes.com/content-images/post/20210911/batik7-c417b2aa2b67b5d6314779bc6a46c62c.jpeg" alt="Product 2">
           <h4>Motif Batik Leuit Sajimat</h4>
-          <p>Batik motif Leuit Sajimat memiliki unsur Leuit Baduy, angklung buhun, bedug kojor, dan rumah Baduy. 
+          <p>Batik motif Leuit Sajimat memiliki unsur Leuit Baduy, angklung buhun, bedug kojor, dan rumah Baduy.
             <br>
-          Motif batik ini memiliki filosofi yang melambangkan lumbung kemakmuran hidup dengan ketahanan pangan yang cukup.</p>
+            Motif batik ini memiliki filosofi yang melambangkan lumbung kemakmuran hidup dengan ketahanan pangan yang cukup.
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
@@ -218,17 +218,19 @@
           <img src="https://cdn.idntimes.com/content-images/post/20210911/batik3-e0697b56209248d424f66c9d20e37892.jpeg" alt="Product 3">
           <h4>Motif Batik Rangkasbitung</h4>
           <p>Motif ini merupakan gambaran sumber daya alam yang melimpah yang dimiliki kabupaten lebak. Ornamen gabungan seluruh sumber kekayaan alam yang dimiliki, pada bagian tengahnya ikatan gula, mayang aren, dan bambu, dan juga dihiasi dengan batu kalimaya.
-          <br>
-          Filosofinya, melambangkan ketertiban, keteraturan, dan keharmonisan. </p>
+            <br>
+            Filosofinya, melambangkan ketertiban, keteraturan, dan keharmonisan.
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
         <div class="product-item">
           <img src="https://cdn.idntimes.com/content-images/post/20210911/batik11-81ae5c64e566d57fa630f902f7795005.jpeg" alt="Product 1">
           <h4>Motif Batik Caruluk Saturuy</h4>
-          <p>Di dalam motif batik ini, terdapat unsur pohon aren, bambu, dan batu kalimaya. 
-          <br> 
-          Filosofinya, motif batik ini melambangkan kehidupan yang penuh kebersamaan meskipun berbeda-beda suku, budaya dan agama, namun tetap saling memberikan manfaat bagi sesama</p>
+          <p>Di dalam motif batik ini, terdapat unsur pohon aren, bambu, dan batu kalimaya.
+            <br>
+            Filosofinya, motif batik ini melambangkan kehidupan yang penuh kebersamaan meskipun berbeda-beda suku, budaya dan agama, namun tetap saling memberikan manfaat bagi sesama
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
@@ -236,8 +238,9 @@
           <img src="https://cdn.idntimes.com/content-images/post/20210911/batik5-c2ddb809510dbd033880b762e25c65f8.jpeg" alt="Product 2">
           <h4>Motif Batik Lebak Bertauhid</h4>
           <p>Motif batik ini terdiri dari unsur-unsur budaya dalam islam seperti bedug, surau masjid, tenun Baduy, dan batik kembang. Surau dan bedug masih tetap dipertahankan dan masih dapat ditemui di lingkungan masyarakat, sebagai sarana siar islam, kegiatan social (musyawarah), dan pendidikan agama. Sedangkan bedug digunakan sebagai pengingat kita sebagai umat islam juga sebagai media social.
-          <br>
-          Filosofinya, motif batik ini melambangkan citra kehidupan yang religious dengan penuh keimanan dan ketaqwaan kepada Allah SWT.</p>
+            <br>
+            Filosofinya, motif batik ini melambangkan citra kehidupan yang religious dengan penuh keimanan dan ketaqwaan kepada Allah SWT.
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
@@ -246,7 +249,8 @@
           <h4>Motif Batik Angklung buhun</h4>
           <p>Batik motif ini terdiri dari unsur angklung buhun, leuit Baduy, bedug lojor, dan rumah Baduy. Angklung buhun dan dogdoglojor adalah kesenian tradisional pada masyarakat suku baduy maupun dikesepuhan lebak selatan.
             <br>
-          Filosofinya, melambangkan kedinamisan dan kegembiraan.</p>
+            Filosofinya, melambangkan kedinamisan dan kegembiraan.
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
@@ -254,8 +258,9 @@
           <img src="https://cdn.idntimes.com/content-images/post/20210911/batik8-0b8e930381feb73d9ae838c336fbb94b.jpeg" alt="Product 1">
           <h4>Motif Batik kalimaya</h4>
           <p>Kalimaya merupakan sumber daya alam Kabupaten Lebak yang banyak ditemui di Kecamatan Maja, Curugbitung, Sarija, dan cimarga sebagai bahan baku cincin. Batu kalimaya adalah icon Kabupaten Lebak yang diproses mulai dari menambang batu, diproses gurinda dan penggosokan. Ornamen utama dari motif ini yaitu batu kalimaya, pada sisi-sisinya ditambah motif angklung, dan motif tenun baduy.
-          <br>  
-          Filosofinya, melambangkan kehidupan yang kuat dengan harmonisasi warna kebajikan.</p>
+            <br>
+            Filosofinya, melambangkan kehidupan yang kuat dengan harmonisasi warna kebajikan.
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
@@ -263,8 +268,9 @@
           <img src="https://cdn.idntimes.com/content-images/post/20210911/batik4-728af3ac6fca189a276b98bf1cc9c27f.jpeg" alt="Product 2">
           <h4>Motif Batik Lebak sadulur</h4>
           <p>Motif batik lebak sadulur dilambangkan oleh dua jenis leuit (lumbung padi) yang berada dikesepuhan lebak selatan dan jenis leuit suku baduy. Dari dua jenis leuit yang berbeda tapi mempunyai fungsi dan manfaat sama yaitu sebagai tempat penyimpanan padi. Ornamen batik sadulur terdiri dari dua buah leuit (lumbung padi), leuit kesepuhan lebak selatan, dan leuit suku baduy dengan ornament tambahan motif tenun baduy dan angklung.
-          <br>  
-          Filosofinya, melambangkan kekeluargaan, kesejahteraan, dan kebersamaan. </p>
+            <br>
+            Filosofinya, melambangkan kekeluargaan, kesejahteraan, dan kebersamaan.
+          </p>
           <button class="view-button">View Details</button>
           <button class="buy-button">Beli</button>
         </div>
@@ -284,7 +290,7 @@
       <p>&copy; 2023 Marketplace baduy All rights reserved.</p>
     </div>
   </footer>
-  
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

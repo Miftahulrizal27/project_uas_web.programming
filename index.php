@@ -14,7 +14,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 }
 
 $className = !empty($urlParts[0]) ? $urlParts[0] : 'Halaman';
-$functionName = !empty($urlParts[1]) ? $urlParts[1] : 'index';
+$functionName = !empty($urlParts[1]) ? explode('?',$urlParts[1])[0] : 'index';
 
 if ($className != "assets") {
     // Remove the class and function names from the URL parts

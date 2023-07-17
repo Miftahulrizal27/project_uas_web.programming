@@ -4,38 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketplace - Product Details</title>
-  <link rel="stylesheet" href="<?= $this->base_url(); ?>assets/css/detail.css">
+  <title>Marketplace - Search</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?= $this->base_url('assets/css/'); ?>detail.css">
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1>Marketplace</h1>
-      <nav>
-        <ul>
-          <li><a href="<?= $this->base_url(); ?>">Beranda</a></li>
-          <li><a href="<?= $this->base_url('detail'); ?>">Detail Barang</a></li>
-          <li><a href="<?= $this->base_url('insert'); ?>">Tambah Barang</a></li>
-          <li><a href="<?= $this->base_url('profile'); ?>">Profile</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="<?= $this->base_url(); ?>">Marketplace Baduy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="<?= $this->base_url('halaman'); ?>">Beranda</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="<?= $this->base_url('cart'); ?>">Keranjang</a>
+            </li>
+            <?php if (!empty($_SESSION['users'])) : ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= $this->base_url('insert'); ?>">Tambah Barang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= $this->base_url('profile'); ?>">Profile</a>
+              </li>
+            <?php endif ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <section class="detail-section">
     <div class="container">
       <div class="product-container">
         <div class="product-image">
-          <img src="https://jubelio-store.s3.ap-southeast-1.amazonaws.com/sustaination/2021/04/01215658/Madu-15-scaled.webp" alt="Product 1">
+          <img src="<?= $this->base_url('uploads/' . $data['file']); ?>" alt="Product 1">
         </div>
         <div class="product-info">
-          <h2>Madu Baduy</h2>
-          <p>Madu Merah dari Baduy Forest, berasal dari hutan badui yang dibambil secara bertanggung jawab.
-            Madu Merah (Red Honey) memiliki rasa manis natural yang berasal dari buah durian, duku, dan bunga lainnya di hutan liar Baduy, Banten.
-            Sehingga kandungan nutrisinya kompleks tidak seperti madu ternak yang biasanya hanya terdiri dari satu macam bunga.
-            Selain itu Madu Merah dari Baduy Forest dapat menggantikan gula pasir untuk penggunaan sehari-hari..</p>
-          <div class="harga">Harga: 50.000-150.000</div>
+          <h2><?= $data['nama']; ?></h2>
+          <p><?= $data['deskripsi']; ?></p>
+          <div class="harga">Harga: <?= $data['harga']; ?></div>
           <button>Beli</button>
         </div>
       </div>
@@ -47,6 +61,10 @@
       <p>&copy; 2023 Marketplace BADUY. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

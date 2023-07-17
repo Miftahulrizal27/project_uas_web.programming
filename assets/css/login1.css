@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
     background-color: #2e4cb0;
 }
-  
+ 
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -18,7 +18,6 @@ body {
   
 header {
     background-color: #333;
-    text-align:center;
     color: #fff;
     padding: 20px;
 }
@@ -41,51 +40,66 @@ nav ul li a {
     text-decoration: none;
 }
   
-.insert-section {
+.login-section {
     padding: 40px 0;
 }
   
-.insert-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.login-toggle {
+    margin-bottom: 40px;
 }
   
-h2 {
+.login-toggle button {
+    padding: 10px 20px;
+    background-color: #f90;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.login-toggle button.active {
+    background-color: #333;
+}
+  
+.login-form {
+    display: none;
+}
+  
+.login-form h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
   
-form .form-group {
+.login-form form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+  
+.form-group {
     margin-bottom: 20px;
 }
   
-form label {
+label {
     display: block;
-    font-size: 16px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
   
-form input[type="text"],
-form textarea,
-form input[type="file"] {
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
   
-form button {
+button {
     padding: 10px 20px;
     background-color: #f90;
     color: #fff;
     border: none;
-    border-radius: 20px;
-    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
 }
   
@@ -98,5 +112,19 @@ footer {
   
 footer p {
     font-size: 14px;
+}
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+  
+a {
+    color: #333;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
 }
   

@@ -5,21 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="<?= $this->base_url(); ?>assets/css/login.css">
+  <link rel="stylesheet" href="<?= $this->base_url('assets/css/'); ?>login.css">
 </head>
 
 <body>
   <div class="container">
     <div class="login-container">
       <h1>Login</h1>
-      <form>
+      <form action="<?= $this->base_url('auth/login'); ?>" method="POST">
         <div class="form-group">
           <label for="login-username">Username</label>
-          <input type="text" id="login-username" required>
+          <input type="text" id="login-username" name="username" required>
         </div>
         <div class="form-group">
           <label for="login-password">Password</label>
-          <input type="password" id="login-password" required>
+          <input type="password" id="login-password" name="password" required>
         </div>
         <div class="form-group">
           <button type="submit">Login</button>

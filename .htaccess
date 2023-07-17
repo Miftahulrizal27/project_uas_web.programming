@@ -2,7 +2,7 @@
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond $1 !^(index\.php|assets|library|user_guide|robots\.txt|uasweb)
+    RewriteCond $1 !^(index\.php|assets|uploads|library|user_guide|robots\.txt|uasweb)
     RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
 
