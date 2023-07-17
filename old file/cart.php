@@ -33,7 +33,7 @@
               <a class="nav-link" href="insert.php">Tambah Barang</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Profile.php">Profile</a>
+              <a class="nav-link" href="Profile1.php">Profile</a>
             </li>
           </ul>
         </div>
