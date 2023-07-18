@@ -33,6 +33,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?= $this->base_url('profile'); ?>">Profile</a>
               </li>
+            <?php else : ?>
+              <li class="nav-item">
+                <a class="btn btn-primary btn-pill" href="<?= $this->base_url('login'); ?>">Login</a>
+              </li>
             <?php endif ?>
           </ul>
         </div>
