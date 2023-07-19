@@ -8,6 +8,11 @@ class Login extends Main_controller
   }
   public function index()
   {
-    $this->load_views('login');
+    if (isset($_SESSION['users'])) {
+      header("Location: " . $this->base_url('halaman'));
+      exit;
+    } else {
+      $this->load_views('login');
+    }
   }
 }

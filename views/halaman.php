@@ -58,9 +58,9 @@
   <section class="product-section">
     <div class="container">
       <h3>Produk</h3>
-      <div class="product-list">
+      <div class="row">
         <?php foreach ($data as $value) : ?>
-          <div class="product-item">
+          <div class="product-item col-md-3 mb-3">
             <img src="<?= $this->base_url('uploads/' . $value['file']); ?>" alt="Product 1">
             <h4><?= $value['nama']; ?></h4>
             <p><?= $value['deskripsi']; ?></p>
